@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hacker Landing</title>
+  <title>Hacker Zone</title>
   <style>
     body {
       margin: 0;
@@ -14,12 +14,17 @@
       justify-content: center;
       height: 100vh;
       overflow: hidden;
+      cursor: pointer;
     }
     img {
-      max-width: 40%;
+      max-width: 35%;
       height: auto;
       margin-bottom: 30px;
-      filter: drop-shadow(0 0 20px #00ff00);
+      filter: drop-shadow(0 0 25px #00ff00);
+      transition: transform 0.3s;
+    }
+    img:hover {
+      transform: scale(1.05);
     }
     .hacker-text {
       font-size: 20px;
@@ -39,20 +44,30 @@
       font-size: 16px;
       color: #00ff00;
     }
+    .channel-name a {
+      color: #00ff00;
+      text-decoration: none;
+      transition: text-shadow 0.3s;
+    }
+    .channel-name a:hover {
+      text-shadow: 0 0 10px #00ff00;
+    }
   </style>
 </head>
-<body>
+<body onclick="closePage()">
   <img src="https://cdn.dribbble.com/userupload/23231536/file/original-96bcc80d639eebc71eb8752d1491565e.gif" alt="Hacker Logo">
   <div class="hacker-text" id="hackerText"></div>
-  <div class="channel-name">@CHS_Channel</div>
+  <div class="channel-name">
+    <a href="https://t.me/CHackerso09" target="_blank">@CHackerso09</a>
+  </div>
 
   <script>
     const messages = [
       "Access Granted...",
-      "Initializing Backdoor...",
-      "Injecting Payload...",
-      "Tracking Target...",
-      "System Breached!"
+      "Deploying Exploit...",
+      "Monitoring Traffic...",
+      "Evading Firewalls...",
+      "Session Hijacked!"
     ];
     let i = 0;
     const textElement = document.getElementById("hackerText");
@@ -60,6 +75,10 @@
       textElement.textContent = messages[i];
       i = (i + 1) % messages.length;
     }, 2000);
+
+    function closePage() {
+      window.close();
+    }
   </script>
 </body>
 </html>
