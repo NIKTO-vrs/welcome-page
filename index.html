@@ -17,12 +17,16 @@
       cursor: pointer;
     }
     img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
+      width: 250px;
+      height: auto;
+      border-radius: 25px; /* گوشه‌ها گرد شد */
       border: 5px solid transparent;
       animation: neon-border 5s linear infinite;
       margin-bottom: 30px;
+      transition: transform 0.3s;
+    }
+    img:hover {
+      transform: scale(1.05);
     }
     @keyframes neon-border {
       0% {
