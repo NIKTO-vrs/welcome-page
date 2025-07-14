@@ -1,103 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hacker Zone</title>
+  <title>TheFatRat - Hacker Tool</title>
   <style>
     body {
       margin: 0;
       background-color: black;
       color: #00ff00;
       font-family: monospace;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      overflow: hidden;
-      cursor: pointer;
+      padding: 20px;
     }
-    img {
-      width: 250px;
-      height: auto;
-      border-radius: 25px; /* گوشه‌ها گرد شد */
-      border: 5px solid transparent;
-      animation: neon-border 5s linear infinite;
-      margin-bottom: 30px;
-      transition: transform 0.3s;
-    }
-    img:hover {
-      transform: scale(1.05);
-    }
-    @keyframes neon-border {
-      0% {
-        box-shadow: 0 0 20px red, 0 0 40px orange, 0 0 60px yellow;
-      }
-      25% {
-        box-shadow: 0 0 20px yellow, 0 0 40px green, 0 0 60px cyan;
-      }
-      50% {
-        box-shadow: 0 0 20px cyan, 0 0 40px blue, 0 0 60px violet;
-      }
-      75% {
-        box-shadow: 0 0 20px violet, 0 0 40px pink, 0 0 60px red;
-      }
-      100% {
-        box-shadow: 0 0 20px red, 0 0 40px orange, 0 0 60px yellow;
-      }
-    }
-    .hacker-text {
-      font-size: 20px;
+    h1 {
+      color: #00ff00;
       text-align: center;
-      height: 30px;
-      margin-bottom: 30px;
-      animation: fade 2s infinite;
-    }
-    @keyframes fade {
-      0% { opacity: 0; }
-      50% { opacity: 1; }
-      100% { opacity: 0; }
-    }
-    .channel-name {
-      position: absolute;
-      bottom: 20px;
-      font-size: 16px;
-      color: #00ff00;
-    }
-    .channel-name a {
-      color: #00ff00;
-      text-decoration: none;
-      transition: text-shadow 0.3s;
-    }
-    .channel-name a:hover {
       text-shadow: 0 0 10px #00ff00;
+    }
+    p, li, code {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    code {
+      background: #111;
+      padding: 2px 5px;
+      border-radius: 5px;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #00ff00;
+      font-size: 14px;
     }
   </style>
 </head>
-<body onclick="closePage()">
-  <img src="https://cdn.dribbble.com/userupload/23231536/file/original-96bcc80d639eebc71eb8752d1491565e.gif" alt="Hacker Logo">
-  <div class="hacker-text" id="hackerText"></div>
-  <div class="channel-name">
-    <a href="https://t.me/CHackerso09" target="_blank">@CHackerso09</a>
-  </div>
+<body>
+  <h1>💣 TheFatRat 💣</h1>
+  <p><strong>⚔️ درباره ابزار:</strong> TheFatRat یک ابزار فوق‌العاده برای ساخت backdoor مخرب در سیستم‌های ویندوز و اندروید است. این ابزار می‌تواند فایل‌های اجرایی مخرب (malware) تولید کند که توسط بسیاری از آنتی‌ویروس‌ها شناسایی نمی‌شوند.</p>
 
-  <script>
-    const messages = [
-      "Access Granted...",
-      "Deploying Exploit...",
-      "Monitoring Traffic...",
-      "Evading Firewalls...",
-      "Session Hijacked!"
-    ];
-    let i = 0;
-    const textElement = document.getElementById("hackerText");
-    setInterval(() => {
-      textElement.textContent = messages[i];
-      i = (i + 1) % messages.length;
-    }, 2000);
+  <p><strong>🔥 ویژگی‌ها:</strong></p>
+  <ul>
+    <li>ساخت فایل‌های مخرب برای ویندوز، اندروید، لینوکس</li>
+    <li>پشتیبانی از متاسپلویت</li>
+    <li>بایپس آنتی ویروس</li>
+    <li>رابط کاربری ترمینال آسان و سریع</li>
+  </ul>
 
-    function closePage() {
-      window.close();
-    }
-  </script>
-</body>
-</html>
+  <p><strong>⚙️ دستورات نصب:</strong></p>
+  <pre><code>git clone https://github.com/Screetsec/TheFatRat.git
+cd TheFatRat
+chmod +x setup.sh
+./setup.sh
