@@ -10,7 +10,7 @@
       background: #0f0f0f;
       color: #00ff9f;
       font-family: monospace;
-      background-image: url('https://cdn.dribbble.com/userupload/23231536/file/original-96bcc80d639eebc71eb8752d1491565e.gif');
+      background-image: url('https://images.alphacoders.com/135/1355218.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -26,6 +26,11 @@
       transition: all 0.3s ease;
       overflow: hidden;
       pointer-events: auto;
+    }
+    .container img {
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
     .container:hover {
       transform: scale(1.02);
@@ -66,13 +71,15 @@
     a:hover {
       color: #ff00c8;
     }
-    .spider-cursor {
+    .trail {
       position: absolute;
       width: 20px;
       height: 20px;
-      background: url('https://i.imgur.com/hp8KjWw.png') no-repeat center center / contain; /* آیکن عنکبوتی */
+      border-radius: 50%;
+      background: #00ff9f;
+      opacity: 0.5;
       pointer-events: none;
-      z-index: 9999;
+      transition: transform 0.2s linear;
     }
   </style>
 </head>
@@ -85,17 +92,8 @@
     <p style="text-align: center;" id="linkP">👾 <a href="https://t.me/CHackerso09" target="_blank">عضویت در کانال</a></p>
   </div>
 
-  <div class="spider-cursor" id="spider"></div>
-
   <script>
-    // عنکبوت دنبال‌کننده موس
-    const spider = document.getElementById('spider');
-    document.addEventListener('mousemove', function(e) {
-      spider.style.left = e.pageX + 'px';
-      spider.style.top = e.pageY + 'px';
-    });
-
-    // تایپ متن با افکت سریع
+    // افکت تایپ سریع
     const texts = [
       document.getElementById('text1'),
       document.getElementById('text2'),
@@ -108,12 +106,30 @@
       text.textContent = '';
       let i = 0;
       text.style.opacity = 1;
-      const speed = 5; // سرعت تایپ (ms per char)
+      const speed = 5;
       const interval = setInterval(() => {
         text.textContent += fullText.charAt(i);
         i++;
         if (i >= fullText.length) clearInterval(interval);
       }, speed);
+    });
+
+    // افکت ردپا (خطوط دنبال‌کننده موس)
+    const trails = [];
+    for (let i = 0; i < 5; i++) {
+      const trail = document.createElement('div');
+      trail.classList.add('trail');
+      document.body.appendChild(trail);
+      trails.push(trail);
+    }
+
+    document.addEventListener('mousemove', function(e) {
+      trails.forEach((trail, index) => {
+        setTimeout(() => {
+          trail.style.left = e.pageX + 'px';
+          trail.style.top = e.pageY + 'px';
+        }, index * 50);
+      });
     });
   </script>
 </body>
