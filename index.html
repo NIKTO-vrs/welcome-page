@@ -31,8 +31,7 @@
       transition: all 0.5s ease;
     }
     .container:hover h1,
-    .container:hover p,
-    .container:hover a {
+    .container:hover p {
       color: #ff0000;
       animation: rgbText 3s infinite linear;
     }
@@ -57,7 +56,6 @@
       color: #00ffe0;
       text-decoration: none;
       font-weight: bold;
-      opacity: 0;
     }
     a:hover {
       color: #ff00c8;
@@ -66,20 +64,21 @@
 </head>
 <body>
   <div class="container">
-    <h1>🔥 CHS 🔥</h1>
+    <h1>🔥CHS🔥</h1>
     <p id="text1">تو این کانال سعی شده بهترین و ارزشمندترین محتواهای هک، امنیت، ناشناس موندن، و ترفندهای واقعی دنیای سایبری منتشر بشه. هدف ما اینه که وقت ارزشمند شما تلف نشه و هر پستی که می‌بینید، یک قدم به حرفه‌ای‌تر شدن نزدیک‌ترتون کنه.</p>
     <p id="text2">💣 آموزش‌های کاربردی ⚡ معرفی ابزار و تکنیک‌ها 🧑‍💻 پروژه‌های عملی و سورس کد 🕶️ روش‌های ناشناس موندن و حفاظت از حریم شخصی</p>
     <p id="text3">اگر دنبال محتوای واقعی، کاربردی و به‌روز هستی، اینجا دقیقاً جاییه که باید باشی.</p>
-    <p style="text-align: center;" id="linkP">👾 <a href="https://t.me/CHackerso09" target="_blank">عضویت در کانال</a></p>
+    <p style="text-align: center;">
+      👾 <a href="https://t.me/CHackerso09" target="_blank">عضویت در کانال</a>
+    </p>
   </div>
 
   <script>
-    // افکت تایپ سریع
+    // افکت تایپ سریع فقط برای پاراگراف‌ها
     const texts = [
       document.getElementById('text1'),
       document.getElementById('text2'),
-      document.getElementById('text3'),
-      document.getElementById('linkP')
+      document.getElementById('text3')
     ];
 
     texts.forEach(text => {
