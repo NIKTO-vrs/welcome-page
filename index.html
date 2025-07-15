@@ -14,7 +14,7 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      pointer-events: none; /* جلوگیری از کلیک */
+      overflow: hidden;
     }
     .container {
       background: rgba(0, 0, 0, 0.7);
@@ -24,7 +24,8 @@
       border-radius: 15px;
       box-shadow: 0 0 20px #00ff9f;
       transition: all 0.3s ease;
-      pointer-events: auto; /* فعال شدن فقط روی این بخش */
+      overflow: hidden;
+      pointer-events: auto;
     }
     .container:hover {
       transform: scale(1.02);
@@ -54,36 +55,66 @@
     p {
       line-height: 1.7;
       font-size: 1.1em;
+      opacity: 0;
     }
     a {
       color: #00ffe0;
       text-decoration: none;
       font-weight: bold;
+      opacity: 0;
     }
     a:hover {
       color: #ff00c8;
+    }
+    .spider-cursor {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: url('https://i.imgur.com/hp8KjWw.png') no-repeat center center / contain; /* آیکن عنکبوتی */
+      pointer-events: none;
+      z-index: 9999;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>🔥 معرفی کانال هکری 🔥</h1>
-    <p>
-      تو این کانال سعی شده بهترین و ارزشمندترین محتواهای هک، امنیت، ناشناس موندن، و ترفندهای واقعی دنیای سایبری منتشر بشه.<br>
-      هدف ما اینه که وقت ارزشمند شما تلف نشه و هر پستی که می‌بینید، یک قدم به حرفه‌ای‌تر شدن نزدیک‌ترتون کنه.
-    </p>
-    <p>
-      💣 آموزش‌های کاربردی<br>
-      ⚡ معرفی ابزار و تکنیک‌ها<br>
-      🧑‍💻 پروژه‌های عملی و سورس کد<br>
-      🕶️ روش‌های ناشناس موندن و حفاظت از حریم شخصی
-    </p>
-    <p>
-      اگر دنبال محتوای واقعی، کاربردی و به‌روز هستی، اینجا دقیقاً جاییه که باید باشی.
-    </p>
-    <p style="text-align: center;">
-      👾 <a href="https://t.me/CHackerso09" target="_blank">عضویت در کانال</a>
-    </p>
+    <p id="text1">تو این کانال سعی شده بهترین و ارزشمندترین محتواهای هک، امنیت، ناشناس موندن، و ترفندهای واقعی دنیای سایبری منتشر بشه. هدف ما اینه که وقت ارزشمند شما تلف نشه و هر پستی که می‌بینید، یک قدم به حرفه‌ای‌تر شدن نزدیک‌ترتون کنه.</p>
+    <p id="text2">💣 آموزش‌های کاربردی ⚡ معرفی ابزار و تکنیک‌ها 🧑‍💻 پروژه‌های عملی و سورس کد 🕶️ روش‌های ناشناس موندن و حفاظت از حریم شخصی</p>
+    <p id="text3">اگر دنبال محتوای واقعی، کاربردی و به‌روز هستی، اینجا دقیقاً جاییه که باید باشی.</p>
+    <p style="text-align: center;" id="linkP">👾 <a href="https://t.me/CHackerso09" target="_blank">عضویت در کانال</a></p>
   </div>
+
+  <div class="spider-cursor" id="spider"></div>
+
+  <script>
+    // عنکبوت دنبال‌کننده موس
+    const spider = document.getElementById('spider');
+    document.addEventListener('mousemove', function(e) {
+      spider.style.left = e.pageX + 'px';
+      spider.style.top = e.pageY + 'px';
+    });
+
+    // تایپ متن با افکت سریع
+    const texts = [
+      document.getElementById('text1'),
+      document.getElementById('text2'),
+      document.getElementById('text3'),
+      document.getElementById('linkP')
+    ];
+
+    texts.forEach(text => {
+      const fullText = text.textContent;
+      text.textContent = '';
+      let i = 0;
+      text.style.opacity = 1;
+      const speed = 5; // سرعت تایپ (ms per char)
+      const interval = setInterval(() => {
+        text.textContent += fullText.charAt(i);
+        i++;
+        if (i >= fullText.length) clearInterval(interval);
+      }, speed);
+    });
+  </script>
 </body>
 </html>
