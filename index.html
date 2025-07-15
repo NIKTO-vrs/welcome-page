@@ -2,7 +2,7 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
-  <title>CHS</title>
+  <title>معرفی کانال هکری</title>
   <style>
     body {
       margin: 0;
@@ -10,10 +10,11 @@
       background: #0f0f0f;
       color: #00ff9f;
       font-family: monospace;
-      background-image: url('https://static.wikia.nocookie.net/watchdogscombined/images/a/a9/%28Un%29Lawful_%28Dis%29Order.gif/revision/latest?cb=20201014010145'); /* کیبورد آرت فرضی، می‌تونیم بعدا تغییر بدیم */
+      background-image: url('https://cdn.dribbble.com/userupload/23231536/file/original-96bcc80d639eebc71eb8752d1491565e.gif');
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
+      pointer-events: none; /* جلوگیری از کلیک */
     }
     .container {
       background: rgba(0, 0, 0, 0.7);
@@ -22,6 +23,27 @@
       max-width: 800px;
       border-radius: 15px;
       box-shadow: 0 0 20px #00ff9f;
+      transition: all 0.3s ease;
+      pointer-events: auto; /* فعال شدن فقط روی این بخش */
+    }
+    .container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 35px #00ff9f;
+    }
+    h1, p, a {
+      transition: all 0.5s ease;
+    }
+    .container:hover h1,
+    .container:hover p,
+    .container:hover a {
+      color: #ff0000;
+      animation: rgbText 3s infinite linear;
+    }
+    @keyframes rgbText {
+      0% { color: #ff0000; }
+      33% { color: #00ff00; }
+      66% { color: #00ffff; }
+      100% { color: #ff0000; }
     }
     h1 {
       text-align: center;
