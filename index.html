@@ -2,18 +2,14 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
-  <title>معرفی کانال هکری</title>
+  <title>CHS</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: #0f0f0f;
+      background: #000;
       color: #00ff9f;
       font-family: monospace;
-      background-image: url('https://cdn.dribbble.com/userupload/23231536/file/original-96bcc80d639eebc71eb8752d1491565e.gif');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
       overflow: hidden;
     }
     .container {
@@ -26,11 +22,6 @@
       transition: all 0.3s ease;
       overflow: hidden;
       pointer-events: auto;
-    }
-    .container img {
-      max-width: 100%;
-      height: auto;
-      display: block;
     }
     .container:hover {
       transform: scale(1.02);
@@ -71,16 +62,6 @@
     a:hover {
       color: #ff00c8;
     }
-    .trail {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #00ff9f;
-      opacity: 0.5;
-      pointer-events: none;
-      transition: transform 0.2s linear;
-    }
   </style>
 </head>
 <body>
@@ -112,24 +93,6 @@
         i++;
         if (i >= fullText.length) clearInterval(interval);
       }, speed);
-    });
-
-    // افکت ردپا (خطوط دنبال‌کننده موس)
-    const trails = [];
-    for (let i = 0; i < 5; i++) {
-      const trail = document.createElement('div');
-      trail.classList.add('trail');
-      document.body.appendChild(trail);
-      trails.push(trail);
-    }
-
-    document.addEventListener('mousemove', function(e) {
-      trails.forEach((trail, index) => {
-        setTimeout(() => {
-          trail.style.left = e.pageX + 'px';
-          trail.style.top = e.pageY + 'px';
-        }, index * 50);
-      });
     });
   </script>
 </body>
